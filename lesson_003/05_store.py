@@ -31,13 +31,20 @@ store = {
 }
 
 # Рассчитать на какую сумму лежит каждого товара на складе
-
 # Вывести суммарную стоимость каждого товара на складе c помощью циклов
 # То есть: всего по лампам, стульям, етс.
 # Формат строки вывода: "<товар> - <кол-во> шт, стоимость <общая стоимость> руб"
 
-# TODO здесь ваш код
+for name, code in goods.items():
+    quantity = 0
+    total = 0
+    for code_key in store:
+        if code_key == code:
+            for test_db in store[code_key]:
+                quantity += test_db['quantity']
+                total += test_db['quantity'] * test_db['price']
 
+    print(f'{name} - {quantity} шт, стоимость {total} руб')
 
 
 
