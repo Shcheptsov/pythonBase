@@ -8,5 +8,13 @@
 # чтобы можно было прожить учебный год (10 месяцев), используя только эти деньги и стипендию.
 
 educational_grant, expenses = 10000, 12000
-
-# TODO здесь ваш код
+month = 1
+expenses_total = 0
+educational_grant_total = 0
+while month <= 10:
+    if month != 1:
+        expenses = expenses * 1.03
+    expenses_total += expenses
+    educational_grant_total += educational_grant
+    month += 1
+print(round(expenses_total - educational_grant_total))
